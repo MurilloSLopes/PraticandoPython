@@ -21,3 +21,29 @@ def classificar_musica(genero_favorito, genero_musica):
 
 resultado = classificar_musica('Rock', 'Pop')
 print(resultado)
+
+inserir_numero = int(input('digite um numero:'))
+if inserir_numero % 2 == 0:
+    print('o numero é par')
+else:
+    print('o numero é impar')
+
+idade_usuario = int(input('Digite sua idade: '))
+if idade_usuario >= 18:
+    print('Adulto:acima de 18 anos.')
+elif idade_usuario <= 12:
+    print('Crianca: 0 a 12 anos;')
+else:
+    print('Adolescente: 13 a 17 anos;')
+
+
+usuario_correto = "alura"
+senha_correta = "alura123"
+
+usuario = input("Digite o nome de usuário: ")
+senha = input("Digite a senha: ")
+
+if usuario == usuario_correto and senha == senha_correta:
+    print("Login bem sucedido!")
+else:
+    print("Credenciais inválidas. Tente novamente.")
