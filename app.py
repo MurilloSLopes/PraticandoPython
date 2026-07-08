@@ -23,7 +23,7 @@ def exibir_opcoes():
     print ('4. Sair\n')
 
 def finalizar_app():
-    '''Essa funcao e responsavel por finalizar o app'''
+    '''exibe uma mensagem de finalizar o app'''
     exibir_subtitulo('Finalizando o app')
 
 def voltar_ao_menu_principal():
@@ -32,12 +32,20 @@ def voltar_ao_menu_principal():
     main() #chamando a funcao main para voltar ao menu principal
 
 def opcao_invalida():
-    '''Essa funcao e responsavel por exibir uma mensagem de opcao invalida'''
+    '''Essa funcao e responsavel por exibir uma mensagem de opcao invalida
+    
+    Outputs:
+    - Retorna ao menu principal
+    '''
     print('opção invalida!\n')
     voltar_ao_menu_principal()
 
 def exibir_subtitulo(texto):
-    '''Essa funcao e responsavel por exibir o subtitulo do menu'''
+    '''Essa funcao e responsavel por exibir o subtitulo do menu
+    
+    Inputs:
+    - texto: string que sera exibida como subtitulo
+    '''
     os.system('cls')
     linha = '*' * (len(texto))
     print(linha)
@@ -65,7 +73,11 @@ def cadastrar_novo_restaurante():
     voltar_ao_menu_principal() #chamando a funcao voltar_ao_menu_principal para voltar ao menu principal
 
 def lista_restaurantes():
-    '''Essa funcao e responsavel por listar os restaurantes cadastrados'''
+    '''Essa funcao e responsavel por listar os restaurantes cadastrados
+    
+    Outputs:
+    - Lista de restaurantes cadastrados
+    '''
     exibir_subtitulo('Listando os restaurantes')
 
     print(f'{'Nome do Restaurante'.ljust(22)} | {'Categoria'.ljust(20)} | {'Status'}')
@@ -77,7 +89,11 @@ def lista_restaurantes():
     voltar_ao_menu_principal() #chamando a funcao voltar_ao_menu_principal para voltar ao menu principal
 
 def alterar_estado_restaurante():
-    '''Essa funcao e responsavel por alterar o estado de um restaurante'''
+    '''alterar o estado ativo/desativado de um restaurante
+    
+    Outputs:
+    - Exibe umsa mensagem de sucesso ou erro caso o restaurante nao seja encontrado
+    '''
     exibir_subtitulo('Alterando o estado do restauranre')
     nome_restaurante = input('Digite o nome do restaurante que deseja alterar o estado: ')
     restaurante_encontrado = False
@@ -90,8 +106,6 @@ def alterar_estado_restaurante():
             print(mensagem)
     if not restaurante_encontrado:
         print(f'O restaurante nao foi encontrado')
-
-
     voltar_ao_menu_principal()
 
 def escolher_opcao(): 
