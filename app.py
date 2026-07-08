@@ -16,23 +16,28 @@ def exibir_nome_do_programa():
        ''')
 
 def exibir_opcoes():
+    '''Essa funcao e responsavel por exibir as opcoes do menu principal'''
     print ('1. Cadastrar restaurantes')
     print ('2. Listar restaurantes')
     print ('3. Alterar estado dos restaurantes')
     print ('4. Sair\n')
 
 def finalizar_app():
+    '''Essa funcao e responsavel por finalizar o app'''
     exibir_subtitulo('Finalizando o app')
 
 def voltar_ao_menu_principal():
+    '''Essa funcao e responsavel por voltar ao menu principal'''
     input('\ndigite uma tecla para voltar ao menu principal ')
     main() #chamando a funcao main para voltar ao menu principal
 
 def opcao_invalida():
+    '''Essa funcao e responsavel por exibir uma mensagem de opcao invalida'''
     print('opção invalida!\n')
     voltar_ao_menu_principal()
 
 def exibir_subtitulo(texto):
+    '''Essa funcao e responsavel por exibir o subtitulo do menu'''
     os.system('cls')
     linha = '*' * (len(texto))
     print(linha)
@@ -41,6 +46,16 @@ def exibir_subtitulo(texto):
     print()
 
 def cadastrar_novo_restaurante():
+    '''Essa funcao e responsavel por cadastrar um novo restaurante
+    
+    Inputs:
+    - nome dos restaurantes
+    - categoria
+
+    Outputs:
+    - adiciona um novo restaurante na lista de restaurantes
+
+    '''
     exibir_subtitulo('Cadastro de restaurantes')
     nome_do_restaurante = input('Digite o nome do restaurante: ')
     categoria = input(f'Digite a categoria do restaurante: {nome_do_restaurante}: ')
@@ -50,6 +65,7 @@ def cadastrar_novo_restaurante():
     voltar_ao_menu_principal() #chamando a funcao voltar_ao_menu_principal para voltar ao menu principal
 
 def lista_restaurantes():
+    '''Essa funcao e responsavel por listar os restaurantes cadastrados'''
     exibir_subtitulo('Listando os restaurantes')
 
     print(f'{'Nome do Restaurante'.ljust(22)} | {'Categoria'.ljust(20)} | {'Status'}')
@@ -60,9 +76,8 @@ def lista_restaurantes():
         print(f'- {nome_restaurante.ljust(20)} | {categoria.ljust(20)} | {ativo}')
     voltar_ao_menu_principal() #chamando a funcao voltar_ao_menu_principal para voltar ao menu principal
 
-
-
 def alterar_estado_restaurante():
+    '''Essa funcao e responsavel por alterar o estado de um restaurante'''
     exibir_subtitulo('Alterando o estado do restauranre')
     nome_restaurante = input('Digite o nome do restaurante que deseja alterar o estado: ')
     restaurante_encontrado = False
@@ -79,7 +94,16 @@ def alterar_estado_restaurante():
 
     voltar_ao_menu_principal()
 
-def escolher_opcao():   
+def escolher_opcao(): 
+    '''Essa funcao e responsavel por escolher a opcao do menu principal
+    
+    Inputs:
+    - Escolher uma opção do menu principal
+
+    Outputs:
+    - Executa a funcao escolhida pelo usuario
+
+    '''  
     try: #try usando para "tentar" executar o bloco que esta abaixo.
         opcao_escolhida = int(input('Escolha uma opção: ')) #criacao de variavel
 
@@ -100,8 +124,8 @@ def escolher_opcao():
     except:
         opcao_invalida() #except usando para caso o try nao funcione ele vai executar tal funcao
 
-#bloco para definir o aquivo principal do app
 def main():
+    '''Essa funcao e responsavel por executar o programa'''
     os.system('cls')
     exibir_nome_do_programa()
     exibir_opcoes()
